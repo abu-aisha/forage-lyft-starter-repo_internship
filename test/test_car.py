@@ -61,12 +61,12 @@ class TestNubbin(unittest.TestCase):
 class TestSpindler(unittest.TestCase):
     def test_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 3)
+        last_service_date = today.replace(year=today.year - 4)
         battery = Spindler(last_service_date,today)
         self.assertTrue(battery.needs_service())
     def test_should_not_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 1)
+        last_service_date = today.replace(year=today.year - 2)
         battery = Spindler(last_service_date,today)
         self.assertFalse(battery.needs_service())
 
@@ -80,7 +80,7 @@ class TestSpindler(unittest.TestCase):
 class TestCalliope(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 3)
+        last_service_date = today.replace(year=today.year - 4)
         current_mileage = 0
         last_service_mileage = 0
 
@@ -89,7 +89,7 @@ class TestCalliope(unittest.TestCase):
 
     def test_battery_should_not_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 1)
+        last_service_date = today.replace(year=today.year - 2)
         current_mileage = 0
         last_service_mileage = 0
 
@@ -118,7 +118,7 @@ class TestCalliope(unittest.TestCase):
 class TestGlissade(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 3)
+        last_service_date = today.replace(year=today.year - 4)
         current_mileage = 0
         last_service_mileage = 0
 
@@ -127,7 +127,7 @@ class TestGlissade(unittest.TestCase):
 
     def test_battery_should_not_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 1)
+        last_service_date = today.replace(year=today.year - 2)
         current_mileage = 0
         last_service_mileage = 0
 
@@ -156,7 +156,7 @@ class TestGlissade(unittest.TestCase):
 class TestPalindrome(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 3)
+        last_service_date = today.replace(year=today.year - 4)
         warning_light_is_on = False
 
         car = CarFactory.create_palindrome(today,last_service_date,warning_light_is_on)
@@ -164,7 +164,7 @@ class TestPalindrome(unittest.TestCase):
 
     def test_battery_should_not_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 1)
+        last_service_date = today.replace(year=today.year - 2)
         warning_light_is_on = False
 
         car = CarFactory.create_palindrome(today,last_service_date,warning_light_is_on)
